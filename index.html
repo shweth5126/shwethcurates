@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shweth Naik — Cinematographer &amp; Editor, Goa</title>
+<meta name="description" content="Cinematography, editing and color grading by Shwethmrunaal Naik, based in Goa, India.">
+<meta property="og:title" content="Shweth Naik — Cinematographer &amp; Editor">
+<meta property="og:description" content="Cinematography, editing and color grading. Goa, India.">
+<meta property="og:image" content="https://shwethcurates.vercel.app/img/hero.jpg">
+<meta property="og:url" content="https://shwethcurates.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F1EC">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161616'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' fill='%23F3F1EC' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F1EC; --fg:#161616; --muted:#68655F; --tile:#E2DED7;
+    --pad:clamp(16px,2.3vw,32px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--fg);text-decoration:none}
+  a:hover{color:var(--muted)}
+  img,video{display:block;width:100%;height:100%;object-fit:cover}
+  button{font:inherit;color:inherit}
+
+  header{padding:28px var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px}
+  header nav{display:flex;gap:28px}
+
+  .frame{position:relative;background:var(--tile);overflow:hidden}
+  .wide{aspect-ratio:16/9}
+  .tall{aspect-ratio:9/16}
+  .caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+  .muted{color:var(--muted)}
+
+  #top{padding:0 var(--pad)}
+  #top .caption{padding-top:14px;color:var(--muted)}
+  .play{position:absolute;inset:0;margin:auto;width:72px;height:72px;border:0;background:transparent;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .play svg{filter:drop-shadow(0 1px 8px rgba(0,0,0,.35))}
+
+  .grid{display:flex;flex-wrap:wrap;gap:48px 8px}
+  .card{flex:1 1 480px;display:flex;flex-direction:column;gap:12px;background:none;border:0;padding:0;text-align:left;cursor:pointer}
+  .card .frame img{transition:transform .6s ease,opacity .3s}
+  .card:hover .frame img{transform:scale(1.02)}
+  .card:hover .label{color:var(--muted)}
+  .reels{display:flex;flex-wrap:wrap;gap:32px 8px}
+  .reel{flex:1 1 200px}
+
+  section{padding:0 var(--pad)}
+  .work{padding-top:120px}
+  .reelsec{padding-top:120px}
+  .reelsec>p{margin:0 0 20px;color:var(--muted)}
+
+  #about{padding-top:160px;display:flex;flex-wrap:wrap;gap:48px}
+  .lede{margin:0;flex:2 1 480px;max-width:720px;font-size:clamp(22px,2.4vw,32px);line-height:1.35}
+  .facts{flex:1 1 280px;display:flex;flex-direction:column;gap:28px}
+  .facts p{margin:0}
+  .facts .k{margin-bottom:6px;color:var(--muted)}
+
+  #contact{padding-top:160px;padding-bottom:120px}
+  #contact .big{margin:0;font-size:clamp(22px,2.4vw,32px);line-height:1.35}
+
+  footer{padding:24px var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--muted);font-size:13px}
+
+  /* video lightbox */
+  .lb{position:fixed;inset:0;background:rgba(14,14,14,.94);display:none;align-items:center;justify-content:center;padding:56px 16px 16px;z-index:10}
+  .lb.open{display:flex}
+  .lb video{width:auto;height:auto;max-width:min(100%,1280px);max-height:calc(100vh - 80px);object-fit:contain;background:#000}
+  .lb .close{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;color:#F3F1EC;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lb .t{position:absolute;top:20px;left:var(--pad);color:#F3F1EC}
+
+  @media (max-width:600px){
+    header nav{gap:20px}
+    .grid{gap:36px 8px}
+    .reel{flex:1 1 40%}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#top" style="font-weight:500">Shweth Naik</a>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section id="top" style="padding-top:0">
+    <div class="frame wide">
+      <video id="heroLoop" src="video/hero-loop.mp4" poster="img/hero.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+      <button class="play" type="button" aria-label="Play showreel" data-video="video/showreel.mp4" data-title="Candle Light Dinner">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>
+      </button>
+    </div>
+    <div class="caption">
+      <span>Candle Light Dinner — 4K</span>
+      <span>Cinematographer and editor, Goa</span>
+    </div>
+  </section>
+
+  <section id="work" class="work">
+    <div class="grid">
+      <button class="card" type="button" data-video="video/highlight.mp4" data-title="Sanyukta &amp; Abhir">
+        <div class="frame wide"><img src="img/w_highlight.jpg" alt="Couple embracing by the sea" loading="lazy"></div>
+        <div class="caption"><span class="label">Sanyukta &amp; Abhir</span><span class="muted">Pre-wedding film</span></div>
+      </button>
+      <button class="card" type="button" data-video="video/bday.mp4" data-title="5th Birthday">
+        <div class="frame wide"><img src="img/w_bday.jpg" alt="Father lifting his daughter on the beach" loading="lazy"></div>
+        <div class="caption"><span class="label">5th Birthday</span><span class="muted">Family film</span></div>
+      </button>
+      <button class="card" type="button" data-video="video/dahi.mp4" data-title="Dahi Handi">
+        <div class="frame wide"><img src="img/w_dahi.jpg" alt="Human pyramid under stage lights at night" loading="lazy"></div>
+        <div class="caption"><span class="label">Dahi Handi</span><span class="muted">Event</span></div>
+      </button>
+      <button class="card" type="button" data-video="video/football.mp4" data-title="Football">
+        <div class="frame wide"><img src="img/w_football.jpg" alt="Football match on a grass field" loading="lazy"></div>
+        <div class="caption"><span class="label">Football</span><span class="muted">Sports</span></div>
+      </button>
+    </div>
+  </section>
+
+  <section class="reelsec">
+    <p>Reels</p>
+    <div class="reels">
+      <button class="card reel" type="button" data-video="video/deva.mp4" data-title="Deva Rakhandar">
+        <div class="frame tall"><img src="img/r_deva.jpg" alt="Garlanded statue of a deity" loading="lazy"></div>
+        <span class="label">Deva Rakhandar</span>
+      </button>
+      <button class="card reel" type="button" data-video="video/sevaco.mp4" data-title="Sevaco">
+        <div class="frame tall"><img src="img/r_sevaco.jpg" alt="Motion graphics frame for Sevaco" loading="lazy"></div>
+        <span class="label">Sevaco</span>
+      </button>
+      <button class="card reel" type="button" data-video="video/nucleus.mp4" data-title="Nucleus Nutrition">
+        <div class="frame tall"><img src="img/r_nucleus.jpg" alt="Nucleus Nutrition storefront" loading="lazy"></div>
+        <span class="label">Nucleus Nutrition</span>
+      </button>
+      <button class="card reel" type="button" data-video="video/run.mp4" data-title="Run with Abhijit">
+        <div class="frame tall"><img src="img/r_run.jpg" alt="Fitness coach speaking outdoors" loading="lazy"></div>
+        <span class="label">Run with Abhijit</span>
+      </button>
+      <button class="card reel" type="button" data-video="video/berry.mp4" data-title="Berry Whisk">
+        <div class="frame tall"><img src="img/r_berry.jpg" alt="Berry Whisk ice cream storefront" loading="lazy"></div>
+        <span class="label">Berry Whisk</span>
+      </button>
+      <button class="card reel" type="button" data-video="video/margao.mp4" data-title="Hey Margaokar">
+        <div class="frame tall"><img src="img/r_margao.jpg" alt="Presenter inside a supplement store" loading="lazy"></div>
+        <span class="label">Hey Margaokar</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="about">
+    <p class="lede">I'm Shwethmrunaal, a cinematographer and editor in Goa. I shoot, cut and grade my own work, so the look stays the same from the first frame on set to the final export.</p>
+    <div class="facts">
+      <div><p class="k">Services</p><p>Cinematography<br>Editing<br>Color grading<br>Motion design</p></div>
+      <div><p class="k">Tools</p><p>DaVinci Resolve, Premiere Pro, After Effects, Lightroom, CapCut, Canva</p></div>
+      <div><p class="k">Kit</p><p>Canon R50 V, Hiffin 350W, Digitek LED, reflector, stands</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="muted" style="margin:0 0 6px">Contact</p>
+    <p class="big"><a href="https://instagram.com/shweth.curates" target="_blank" rel="noopener">@shweth.curates</a></p>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Shwethmrunaal Siddharth Naik</span>
+  <span>Goa, India</span>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video player">
+  <span class="t" id="lbTitle"></span>
+  <button class="close" type="button" id="lbClose" aria-label="Close video">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <video id="lbVideo" controls playsinline preload="metadata"></video>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'), v=document.getElementById('lbVideo'),
+      title=document.getElementById('lbTitle'), closeBtn=document.getElementById('lbClose'),
+      hero=document.getElementById('heroLoop'), lastFocus=null;
+  function open(src,t,btn){
+    lastFocus=btn; v.src=src; title.textContent=t||'';
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+    if(hero) hero.pause();
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    closeBtn.focus();
+  }
+  function close(){
+    v.pause(); v.removeAttribute('src'); v.load();
+    lb.classList.remove('open'); document.body.style.overflow='';
+    if(hero){var p=hero.play(); if(p&&p.catch) p.catch(function(){});}
+    if(lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-video]').forEach(function(b){
+    b.addEventListener('click',function(){open(b.getAttribute('data-video'),b.getAttribute('data-title'),b);});
+  });
+  closeBtn.addEventListener('click',close);
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('open')) close(); });
+})();
+</script>
+</body>
+</html>
