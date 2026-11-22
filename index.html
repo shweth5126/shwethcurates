@@ -3,185 +3,234 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shweth Naik — Cinematographer &amp; Editor, Goa</title>
-<meta name="description" content="Cinematography, editing and color grading by Shwethmrunaal Naik, based in Goa, India.">
-<meta property="og:title" content="Shweth Naik — Cinematographer &amp; Editor">
-<meta property="og:description" content="Cinematography, editing and color grading. Goa, India.">
+<title>Shweth Naik — Cinematographer & Editor, Goa</title>
+<meta name="description" content="Cinematography, editing and color grading for weddings, brands and creators. Based in Goa, India.">
+<meta property="og:title" content="Shweth Naik — Cinematographer & Editor">
+<meta property="og:description" content="Shot, cut and graded by one person. Goa, India.">
 <meta property="og:image" content="https://shwethcurates.vercel.app/img/hero.jpg">
 <meta property="og:url" content="https://shwethcurates.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F3F1EC">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161616'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='18' fill='%23F3F1EC' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0D0F10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D0F10'/%3E%3Ctext x='16' y='23' font-family='Georgia' font-size='20' fill='%23C9A878' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#F3F1EC; --fg:#161616; --muted:#68655F; --tile:#E2DED7;
-    --pad:clamp(16px,2.3vw,32px);
-    --max:1120px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--fg);font-family:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  a{color:var(--fg);text-decoration:none}
-  a:hover{color:var(--muted)}
-  img,video{display:block;width:100%;height:100%;object-fit:cover}
-  button{font:inherit;color:inherit}
+:root{
+  --bg:#0D0F10; --text:#EAE7E0; --muted:#8E9290; --line:#262A2B; --gold:#C9A878;
+  --serif:"Cormorant Garamond","Times New Roman",Georgia,serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+  --pad:clamp(22px,6vw,96px);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:300 1.0625rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+img,video{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
 
-  header{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:28px var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px}
-  header nav{display:flex;gap:28px}
+/* Nav */
+.nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;justify-content:space-between;align-items:center;height:7vh;min-height:56px;padding:0 var(--pad);background:var(--bg)}
+.brand{font:400 1.5rem var(--serif);text-decoration:none;letter-spacing:.01em}
+.nav ul{display:flex;gap:34px;list-style:none;padding:0}
+.nav a{text-decoration:none;font-size:.9375rem;color:var(--muted);transition:color .25s}
+.nav a:hover{color:var(--text)}
 
-  .frame{position:relative;background:var(--tile);overflow:hidden}
-  .wide{aspect-ratio:16/9}
-  .tall{aspect-ratio:9/16}
-  .caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
-  .muted{color:var(--muted)}
+/* Hero, letterboxed */
+.hero{position:relative;height:100svh;padding:max(7vh,56px) 0}
+.hero .shot{position:relative;height:100%;overflow:hidden}
+.hero video{position:absolute;inset:0}
+.hero .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(13,15,16,.55),rgba(13,15,16,0) 45%)}
+.hero-bar{position:absolute;left:var(--pad);right:var(--pad);bottom:0;height:max(7vh,56px);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.hero-bar span{font:italic 300 1.25rem var(--serif);color:var(--muted)}
+.hero-bar button{font-size:.9375rem;border-bottom:1px solid var(--gold);padding-bottom:2px;transition:color .25s}
+.hero-bar button:hover{color:var(--gold)}
+.hero h1{position:absolute;z-index:2;left:var(--pad);bottom:calc(max(7vh,56px) + 28px);font:300 clamp(3.25rem,11vw,10rem)/.9 var(--serif);letter-spacing:-.02em}
+.hero h1 em{font-weight:300;color:var(--gold)}
 
-  #top{padding:0 var(--pad)}
-  .hero{aspect-ratio:2.39/1}
-  @media (max-width:700px){.hero{aspect-ratio:16/9}}
-  #top .caption{padding-top:14px;color:var(--muted)}
-  .play{position:absolute;inset:0;margin:auto;width:72px;height:72px;border:0;background:transparent;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
-  .play svg{filter:drop-shadow(0 1px 8px rgba(0,0,0,.35))}
+/* Intro */
+.intro{padding:clamp(80px,12vw,170px) var(--pad);display:grid;grid-template-columns:1fr 2fr;gap:var(--pad)}
+.intro small{color:var(--muted);font-size:.9375rem;padding-top:.7em}
+.intro p{font:300 clamp(1.7rem,3.6vw,3rem)/1.22 var(--serif);max-width:26ch}
+.intro p+p{font:300 1.0625rem/1.7 var(--sans);color:var(--muted);max-width:50ch;margin-top:28px}
 
-  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 12px}
-  .card{display:flex;flex-direction:column;gap:12px;background:none;border:0;padding:0;text-align:left;cursor:pointer}
-  .card .frame img{transition:transform .6s ease,opacity .3s}
-  .card:hover .frame img{transform:scale(1.02)}
-  .card:hover .label{color:var(--muted)}
-  .reels{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 12px}
-  .reel{min-width:0}
+/* Films */
+.film{padding:0 var(--pad) clamp(64px,9vw,128px)}
+.frame{position:relative;display:block;width:100%;aspect-ratio:21/9;overflow:hidden;background:#161A1B;text-align:left}
+.frame img{object-position:50% 35%;transition:transform 1.2s ease}
+.has-video{cursor:pointer}
+.has-video:hover img{transform:scale(1.035)}
+.play{position:absolute;inset:0;display:none;place-items:center}
+.has-video .play{display:grid}
+.play i{width:84px;height:84px;border:1px solid rgba(234,231,224,.7);border-radius:50%;display:grid;place-items:center;background:rgba(13,15,16,.25);backdrop-filter:blur(4px);transition:background .3s,transform .3s}
+.has-video:hover .play i{background:rgba(13,15,16,.55);transform:scale(1.06)}
+.play svg{width:16px;height:18px;fill:var(--text);margin-left:4px}
+.cap{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-top:22px;flex-wrap:wrap}
+.cap h2{font:300 clamp(2rem,4.4vw,3.6rem)/1 var(--serif);letter-spacing:-.01em}
+.cap span{color:var(--muted);font-size:.9375rem}
+.cap-note{color:var(--muted);margin-top:8px;max-width:56ch}
 
-  section{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
-  .work{padding-top:96px}
-  .reelsec{padding-top:96px}
-  .reelsec>p{margin:0 0 20px;color:var(--muted)}
+/* Reels */
+.reels-sec{padding:clamp(40px,6vw,80px) var(--pad) clamp(80px,11vw,150px);border-top:1px solid var(--line)}
+.reels-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin:clamp(28px,4vw,48px) 0}
+.reels-head h2{font:300 clamp(2rem,4.4vw,3.6rem)/1 var(--serif)}
+.reels-head p{color:var(--muted);max-width:40ch}
+.reels{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.reel .frame{aspect-ratio:9/16}
+.reel .play i{width:56px;height:56px}
+.reel h3{font:400 1.0625rem var(--sans);margin-top:14px}
+.reel p{color:var(--muted);font-size:.9375rem}
 
-  #about{padding-top:128px;display:flex;flex-wrap:wrap;gap:48px}
-  .lede{margin:0;flex:2 1 480px;max-width:720px;font-size:clamp(20px,2vw,27px);line-height:1.4}
-  .facts{flex:1 1 280px;display:flex;flex-direction:column;gap:28px}
-  .facts p{margin:0}
-  .facts .k{margin-bottom:6px;color:var(--muted)}
+/* Craft */
+.craft{padding:clamp(80px,11vw,150px) var(--pad);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:var(--pad)}
+.craft h2{font:300 clamp(2rem,4vw,3.2rem)/1.05 var(--serif)}
+.craft dl div{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.craft dl div:first-child{padding-top:0}
+dt{color:var(--muted)}
+dd{font-weight:400}
 
-  #contact{padding-top:128px;padding-bottom:96px}
-  #contact .big{margin:0;font-size:clamp(20px,2vw,27px);line-height:1.35}
+/* Contact */
+.contact{padding:clamp(90px,13vw,190px) var(--pad);border-top:1px solid var(--line)}
+.contact h2{font:300 clamp(2.8rem,9vw,8rem)/.95 var(--serif);letter-spacing:-.02em;max-width:12ch}
+.contact h2 em{color:var(--gold)}
+.contact p{color:var(--muted);margin:28px 0 36px;max-width:46ch}
+.link{font:300 clamp(1.3rem,2.4vw,1.9rem) var(--serif);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:4px;transition:color .25s}
+.link:hover{color:var(--gold)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:26px var(--pad);color:var(--muted);font-size:.875rem;border-top:1px solid var(--line)}
 
-  footer{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:24px var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--muted);font-size:13px}
+/* Lightbox */
+dialog{border:0;padding:0;background:#000;width:min(1100px,94vw);max-height:92vh;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.88)}
+dialog video,dialog iframe{width:100%;max-height:88vh;aspect-ratio:16/9;border:0;background:#000;object-fit:contain}
+.close{position:absolute;top:8px;right:8px;z-index:2;width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.65);font-size:1.4rem;line-height:1}
 
-  /* video lightbox */
-  .lb{position:fixed;inset:0;background:rgba(14,14,14,.94);display:none;align-items:center;justify-content:center;padding:56px 16px 16px;z-index:10}
-  .lb.open{display:flex}
-  .lb video{width:auto;height:auto;max-width:min(100%,1280px);max-height:calc(100vh - 80px);object-fit:contain;background:#000}
-  .lb .close{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;color:#F3F1EC;cursor:pointer;display:flex;align-items:center;justify-content:center}
-  .lb .t{position:absolute;top:20px;left:var(--pad);color:#F3F1EC}
-
-  @media (max-width:700px){
-    .grid{grid-template-columns:1fr}
-    .reels{grid-template-columns:repeat(3,minmax(0,1fr))}
-  }
-  @media (max-width:600px){
-    header nav{gap:20px}
-    .grid{gap:36px 8px}
-  }
+@media (max-width:900px){
+  .nav ul li:nth-child(-n+2){display:none}
+  .intro,.craft{grid-template-columns:1fr;gap:24px}
+  .frame{aspect-ratio:4/3}
+  .reel .frame{aspect-ratio:9/16}
+  .reels{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);scrollbar-width:none}
+  .reel{flex:0 0 62%;scroll-snap-align:start}
+  .hero-bar span{display:none}
+}
+@media (max-width:520px){
+  .craft dl div{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .frame img,.play i{transition:none}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <a href="#top" style="font-weight:500">Shweth Naik</a>
-  <nav>
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+<header class="nav">
+  <a class="brand" href="#top">Shweth Naik</a>
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="#films">Films</a></li>
+      <li><a href="#reels">Reels</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 </header>
 
-<main>
-  <section id="top" style="padding-top:0">
-    <div class="frame hero">
-      <video id="heroLoop" src="video/hero-loop.mp4" poster="img/hero.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-      <button class="play" type="button" aria-label="Play showreel" data-video="video/showreel.mp4" data-title="Candle Light Dinner">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>
-      </button>
+<main id="top">
+  <div class="hero">
+    <div class="shot">
+      <video autoplay muted loop playsinline preload="metadata" poster="img/hero.jpg" aria-hidden="true">
+        <source src="video/hero-loop.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="caption">
-      <span>Candle Light Dinner — 4K</span>
-      <span>Cinematographer and editor, Goa</span>
+    <h1>Shweth <em>Naik</em></h1>
+    <div class="hero-bar">
+      <span>Cinematographer &amp; editor, Goa</span>
+      <button data-open="showreel">Watch showreel</button>
+    </div>
+  </div>
+
+  <section class="intro">
+    <small>About</small>
+    <div>
+      <p>Stories shot, cut and graded by one person, so every frame feels like it belongs.</p>
+      <p>I work on weddings, family films, events, sports and brand content from my base in Goa.</p>
     </div>
   </section>
 
-  <section id="work" class="work">
-    <div class="grid">
-      <button class="card" type="button" data-video="video/karya.mp4" data-title="Karya">
-        <div class="frame wide"><img src="img/w_karya.jpg" alt="Parents walking into the sea at sunset with their baby" loading="lazy"></div>
-        <div class="caption"><span class="label">Karya</span><span class="muted">Birthday film</span></div>
-      </button>
-      <button class="card" type="button" data-video="video/highlight.mp4" data-title="Sanyukta &amp; Abhir">
-        <div class="frame wide"><img src="img/w_highlight.jpg" alt="Couple embracing by the sea" loading="lazy"></div>
-        <div class="caption"><span class="label">Sanyukta &amp; Abhir</span><span class="muted">Pre-wedding film</span></div>
-      </button>
-      <button class="card" type="button" data-video="video/bday.mp4" data-title="5th Birthday">
-        <div class="frame wide"><img src="img/w_bday.jpg" alt="Father lifting his daughter on the beach" loading="lazy"></div>
-        <div class="caption"><span class="label">5th Birthday</span><span class="muted">Family film</span></div>
-      </button>
-      <button class="card" type="button" data-video="video/dahi.mp4" data-title="Dahi Handi">
-        <div class="frame wide"><img src="img/w_dahi.jpg" alt="Human pyramid under stage lights at night" loading="lazy"></div>
-        <div class="caption"><span class="label">Dahi Handi</span><span class="muted">Event</span></div>
-      </button>
-      <button class="card" type="button" data-video="video/pov.mp4" data-title="My POV">
-        <div class="frame wide"><img src="img/w_pov.jpg" alt="Camera in hand, filming a crowd at a marathon" loading="lazy"></div>
-        <div class="caption"><span class="label">My POV</span><span class="muted">Behind the camera</span></div>
-      </button>
-      <button class="card" type="button" data-video="video/football.mp4" data-title="Football">
-        <div class="frame wide"><img src="img/w_football.jpg" alt="Football match on a grass field" loading="lazy"></div>
-        <div class="caption"><span class="label">Football</span><span class="muted">Sports</span></div>
-      </button>
-    </div>
+  <section id="films">
+    <article class="film">
+      <button class="frame" data-open="karya" aria-label="Play Karya"><img src="img/w_karya.jpg" alt="Parents walking into the sea at sunset with their baby" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+      <div class="cap"><h2>Karya</h2><span>Birthday film</span></div>
+    </article>
+    <article class="film">
+      <button class="frame" data-open="highlight" aria-label="Play Sanyukta &amp; Abhir"><img src="img/w_highlight.jpg" alt="Couple embracing by the sea" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+      <div class="cap"><h2>Sanyukta &amp; Abhir</h2><span>Pre-wedding film</span></div>
+    </article>
+    <article class="film">
+      <button class="frame" data-open="bday" aria-label="Play 5th Birthday"><img src="img/w_bday.jpg" alt="Father lifting his daughter on the beach" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+      <div class="cap"><h2>5th Birthday</h2><span>Family film</span></div>
+    </article>
+    <article class="film">
+      <button class="frame" data-open="dahi" aria-label="Play Dahi Handi"><img src="img/w_dahi.jpg" alt="Human pyramid under stage lights at night" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+      <div class="cap"><h2>Dahi Handi</h2><span>Event</span></div>
+    </article>
+    <article class="film">
+      <button class="frame" data-open="pov" aria-label="Play My POV"><img src="img/w_pov.jpg" alt="Camera in hand, filming a crowd at a marathon" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+      <div class="cap"><h2>My POV</h2><span>Behind the camera</span></div>
+    </article>
+    <article class="film">
+      <button class="frame" data-open="football" aria-label="Play Football"><img src="img/w_football.jpg" alt="Football match on a grass field" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+      <div class="cap"><h2>Football</h2><span>Sports</span></div>
+    </article>
   </section>
 
-  <section class="reelsec">
-    <p>Reels</p>
+  <section id="reels" class="reels-sec">
+    <div class="reels-head">
+      <h2>Reels</h2>
+      <p>Short vertical films for brands and creators.</p>
+    </div>
     <div class="reels">
-      <button class="card reel" type="button" data-video="video/deva.mp4" data-title="Deva Rakhandar">
-        <div class="frame tall"><img src="img/r_deva.jpg" alt="Garlanded statue of a deity" loading="lazy"></div>
-        <span class="label">Deva Rakhandar</span>
-      </button>
-      <button class="card reel" type="button" data-video="video/sevaco.mp4" data-title="Sevaco">
-        <div class="frame tall"><img src="img/r_sevaco.jpg" alt="Motion graphics frame for Sevaco" loading="lazy"></div>
-        <span class="label">Sevaco</span>
-      </button>
-      <button class="card reel" type="button" data-video="video/nucleus.mp4" data-title="Nucleus Nutrition">
-        <div class="frame tall"><img src="img/r_nucleus.jpg" alt="Nucleus Nutrition storefront" loading="lazy"></div>
-        <span class="label">Nucleus Nutrition</span>
-      </button>
-      <button class="card reel" type="button" data-video="video/run.mp4" data-title="Run with Abhijit">
-        <div class="frame tall"><img src="img/r_run.jpg" alt="Fitness coach speaking outdoors" loading="lazy"></div>
-        <span class="label">Run with Abhijit</span>
-      </button>
-      <button class="card reel" type="button" data-video="video/berry.mp4" data-title="Berry Whisk">
-        <div class="frame tall"><img src="img/r_berry.jpg" alt="Berry Whisk ice cream storefront" loading="lazy"></div>
-        <span class="label">Berry Whisk</span>
-      </button>
-      <button class="card reel" type="button" data-video="video/margao.mp4" data-title="Hey Margaokar">
-        <div class="frame tall"><img src="img/r_margao.jpg" alt="Presenter inside a supplement store" loading="lazy"></div>
-        <span class="label">Hey Margaokar</span>
-      </button>
+      <article class="reel">
+        <button class="frame" data-open="deva" aria-label="Play Deva Rakhandar"><img src="img/r_deva.jpg" alt="Garlanded statue of a deity" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+        <h3>Deva Rakhandar</h3>
+      </article>
+      <article class="reel">
+        <button class="frame" data-open="sevaco" aria-label="Play Sevaco"><img src="img/r_sevaco.jpg" alt="Motion graphics frame for Sevaco" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+        <h3>Sevaco</h3>
+      </article>
+      <article class="reel">
+        <button class="frame" data-open="nucleus" aria-label="Play Nucleus Nutrition"><img src="img/r_nucleus.jpg" alt="Nucleus Nutrition storefront" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+        <h3>Nucleus Nutrition</h3>
+      </article>
+      <article class="reel">
+        <button class="frame" data-open="run" aria-label="Play Run with Abhijit"><img src="img/r_run.jpg" alt="Fitness coach speaking outdoors" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+        <h3>Run with Abhijit</h3>
+      </article>
+      <article class="reel">
+        <button class="frame" data-open="berry" aria-label="Play Berry Whisk"><img src="img/r_berry.jpg" alt="Berry Whisk ice cream storefront" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+        <h3>Berry Whisk</h3>
+      </article>
+      <article class="reel">
+        <button class="frame" data-open="margao" aria-label="Play Hey Margaokar"><img src="img/r_margao.jpg" alt="Presenter inside a supplement store" loading="lazy"><span class="play"><i><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></i></span></button>
+        <h3>Hey Margaokar</h3>
+      </article>
     </div>
   </section>
 
-  <section id="about">
-    <p class="lede">I'm Shwethmrunaal, a cinematographer and editor in Goa. I shoot, cut and grade my own work, so the look stays the same from the first frame on set to the final export.</p>
-    <div class="facts">
-      <div><p class="k">Services</p><p>Cinematography<br>Editing<br>Color grading<br>Motion design</p></div>
-      <div><p class="k">Tools</p><p>DaVinci Resolve, Premiere Pro, After Effects, Lightroom, CapCut, Canva</p></div>
-      <div><p class="k">Kit</p><p>Canon R50 V, Hiffin 350W, Digitek LED, reflector, stands</p></div>
-    </div>
+  <section class="craft">
+    <h2>The craft</h2>
+    <dl>
+      <div><dt>Services</dt><dd>Cinematography, editing, color grading, motion design</dd></div>
+      <div><dt>Software</dt><dd>DaVinci Resolve, Premiere Pro, After Effects, Lightroom, CapCut, Canva</dd></div>
+      <div><dt>Kit</dt><dd>Canon R50 V, Hiffin 350W, Digitek LED, reflector, stands</dd></div>
+    </dl>
   </section>
 
-  <section id="contact">
-    <p class="muted" style="margin:0 0 6px">Contact</p>
-    <p class="big"><a href="https://instagram.com/shweth.curates" target="_blank" rel="noopener">@shweth.curates</a></p>
+  <section id="contact" class="contact">
+    <h2>Let's tell your <em>story.</em></h2>
+    <p>Share the occasion or the brand and the feeling you want it to leave behind.</p>
+    <a class="link" href="https://instagram.com/shweth.curates" target="_blank" rel="noopener">@shweth.curates</a>
   </section>
 </main>
 
@@ -190,39 +239,47 @@
   <span>Goa, India</span>
 </footer>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video player">
-  <span class="t" id="lbTitle"></span>
-  <button class="close" type="button" id="lbClose" aria-label="Close video">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
-  </button>
-  <video id="lbVideo" controls playsinline preload="metadata"></video>
-</div>
+<dialog id="player" aria-label="Video player">
+  <button class="close" aria-label="Close video">×</button>
+  <div id="stage"></div>
+</dialog>
 
 <script>
-(function(){
-  var lb=document.getElementById('lb'), v=document.getElementById('lbVideo'),
-      title=document.getElementById('lbTitle'), closeBtn=document.getElementById('lbClose'),
-      hero=document.getElementById('heroLoop'), lastFocus=null;
-  function open(src,t,btn){
-    lastFocus=btn; v.src=src; title.textContent=t||'';
-    lb.classList.add('open'); document.body.style.overflow='hidden';
-    if(hero) hero.pause();
-    var p=v.play(); if(p&&p.catch) p.catch(function(){});
-    closeBtn.focus();
+/* Add a video for any project: a file path (video/name.mp4) or a YouTube / Vimeo link.
+   Projects left empty show only the still image and are not clickable. */
+const VIDEOS = {
+  showreel: "video/showreel.mp4",
+  karya: "video/karya.mp4", highlight: "video/highlight.mp4", bday: "video/bday.mp4",
+  dahi: "video/dahi.mp4", pov: "video/pov.mp4", football: "video/football.mp4",
+  deva: "video/deva.mp4", sevaco: "video/sevaco.mp4", nucleus: "video/nucleus.mp4",
+  run: "video/run.mp4", berry: "video/berry.mp4", margao: "video/margao.mp4"
+};
+
+const dlg = document.getElementById("player");
+const stage = document.getElementById("stage");
+
+function embed(url){
+  let m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})/);
+  if (m) return '<iframe src="https://www.youtube.com/embed/'+m[1]+'?autoplay=1" allow="autoplay; fullscreen" allowfullscreen title="Video"></iframe>';
+  m = url.match(/vimeo\.com\/(\d+)/);
+  if (m) return '<iframe src="https://player.vimeo.com/video/'+m[1]+'?autoplay=1" allow="autoplay; fullscreen" allowfullscreen title="Video"></iframe>';
+  return '<video src="'+url+'" controls autoplay playsinline></video>';
+}
+
+document.querySelectorAll("[data-open]").forEach(el => {
+  const url = VIDEOS[el.dataset.open];
+  if (!url){
+    if (el.classList.contains("frame")){ el.disabled = true; el.style.cursor = "default"; }
+    else el.style.display = "none";
+    return;
   }
-  function close(){
-    v.pause(); v.removeAttribute('src'); v.load();
-    lb.classList.remove('open'); document.body.style.overflow='';
-    if(hero){var p=hero.play(); if(p&&p.catch) p.catch(function(){});}
-    if(lastFocus) lastFocus.focus();
-  }
-  document.querySelectorAll('[data-video]').forEach(function(b){
-    b.addEventListener('click',function(){open(b.getAttribute('data-video'),b.getAttribute('data-title'),b);});
-  });
-  closeBtn.addEventListener('click',close);
-  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('open')) close(); });
-})();
+  el.classList.add("has-video");
+  el.addEventListener("click", () => { stage.innerHTML = embed(url); dlg.showModal(); });
+});
+
+dlg.addEventListener("close", () => { stage.innerHTML = ""; });
+dlg.querySelector(".close").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
 </script>
 </body>
 </html>
